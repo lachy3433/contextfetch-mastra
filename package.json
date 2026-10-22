@@ -1,0 +1,60 @@
+{
+  "name": "@contextfetch/mastra",
+  "version": "0.1.0",
+  "description": "ContextFetch web search and page contents tools for Mastra agents",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "node --test test/tools.test.mjs test/live.test.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@contextfetch/sdk": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@mastra/core": ">=1.0.0-0 <2.0.0-0",
+    "zod": "^3.25.0 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@mastra/core": "1.79.0",
+    "@types/node": "22.19.1",
+    "ai": "^7.0.148",
+    "typescript": "7.0.2",
+    "zod": "4.6.7"
+  },
+  "keywords": [
+    "contextfetch",
+    "mastra",
+    "tools",
+    "web-search",
+    "markdown",
+    "ai-agent"
+  ],
+  "homepage": "https://github.com/lachy3433/contextfetch-mastra#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lachy3433/contextfetch-mastra.git"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
